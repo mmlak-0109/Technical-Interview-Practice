@@ -1,0 +1,22 @@
+Question 1
+This one was hard to calculate due to the fact that I use python's itertools.permutations module.  I found out that the output given by itertools.permutations is n!, however, so I'm assuming the time efficiency of the algorithm is equal to that at O(n!).  Before that though, the for loop that checks of any letters in t are missing in s has a time efficiency of O(n).  As a result, the efficieny of my algorithm is estimated to be O(n*n!).  However, since the O(n!) efficicnecy of itertools.permutations will take priority as the size of the inputs increase,the overall time efficiency can be reduced to simply O(n!).  Not efficient at all.
+
+The space effieciency, however, will be O(1) since no additional information is being saved as the function runs.  It checks each permutation as it comes, but drops it from memory once it's done.
+
+Question 2
+For this algorithm, I first check if the string is empty.  If so, operations would stop there, making the runtime O(1) in the best case (which is unlikely).  In the worst case though, the initial while loop would run through the entire string once making it O(n).  The other two while loops would run through each string, minus one, so they would be O(n-1).  As an aproximation, my code efficiency is estimated to be O(n^3).
+
+For space efficiency, I save multiple instances of the original imput, but they get paired down in size as the algorithm progresses.  As a result, the space efficiency is O(n).
+
+Question 3
+
+
+Question 4
+The data structure being used for this problem is a matrix made up of arrays (that represent a binary search tree).  The worst case for searching arrays is O(n).  Because the matrix is a square (making the length of each individual array equal to the length of the matrix as a whole), at worst case I would have to loop through entire matrix once at O(n).  So the time efficiency is estimated to be O(n^2).
+
+The estimated space efficiency is O(1), because I don't create any new variables.
+
+Question 5
+The data structure used for question 5 is a singly linked list.  Even though my code runs two loops (a for loop and a while loop), both loops put together only iterate through the linked list once, making the estimated time efficiency O(n).
+
+The space efficiency is also O(n) since I save multiple instances of the original linked list.
