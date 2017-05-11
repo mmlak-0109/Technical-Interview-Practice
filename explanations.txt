@@ -4,9 +4,9 @@ Description:
 Given two strings s and t, determine whether some anagram of t is a substring of s. For example: if s = "udacity" and t = "ad", then the function returns True. Your function definition should look like: question1(s, t) and return a boolean True or False.
 
 Big O Notation:
-This one was hard to calculate due to the fact that I use python's itertools.permutations module.  I found out that the output given by itertools.permutations is n!, however, so I'm assuming the time efficiency of the algorithm is equal to that at O(n!).  Before that though, the for loop that checks of any letters in t are missing in s has a time efficiency of O(n).  As a result, the efficiency of my algorithm is estimated to be O(n*n!).  However, since the O(n!) efficiency of itertools.permutations will take priority as the size of the inputs increase,the overall time efficiency can be reduced to simply O(n!).  Not efficient at all.
+The estimated time efficiency is O(n) or O(len(s)) because the algorithm only needs to go through each element in string s once.
 
-The space efficiency, however, is estimated to be O(1) since no additional information is being saved as the function runs.  It checks each permutation as it comes, but drops it from memory once it's done.
+The space efficiency, however, is estimated to be O(1) since no additional information is being saved as the function runs.
 
 
 

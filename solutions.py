@@ -1,27 +1,18 @@
 ### Question 1
 
-from itertools import permutations
-
 def question1(s, t):
-    if t == "":
-        return True
+    """The inputs are two strings s and t.  The algorithm determines whether some anagram of t is a substring of s and returns a boolean of True or False.  The for loop runs through the length of string s, checking whether the sorted string t is equal to a sorted substring in string s with a length of string t.
+    """
 
-    elif t == None or s == None:
-        return False
-
-    elif len(s) < len(t):
+    if s == None or t == None:
         return False
 
     else:
-        for l in t:
-            if s.find(l) == -1:
-                break
-            else:
-                for p in permutations(t):
-                    if s.find(''.join(p)) != -1:
-                        return True
+        for i in range(len(s)):
+            if sorted(s[i:(i+len(t))]) == sorted(t):
+                return True
 
-    return False
+        return False
 
 #returns True
 print question1("udacity", "ad")
@@ -41,10 +32,11 @@ print question1("igotnothing", None)
 ### Question 2
 
 def question2(a):
+
     longest = ""
 
-    if a == "":
-        return a
+    if a == None:
+        return "not a string"
 
     else:
         while a != a[::-1]:
@@ -79,6 +71,10 @@ print question2('abccbadef')
 print question2('bbcdbabdef')
 #returns "geeksskeeg"
 print question2('forgeeksskeegfor')
+#returns ""
+print question2("")
+#returns "not a string"
+print question2(None)
 
 
 
@@ -299,3 +295,6 @@ d.next = e
 
 #returns 7
 print question5(a,2)
+
+#returns None
+print question5(None, 5)
